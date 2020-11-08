@@ -1,37 +1,44 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(Myapp());
-}
+void main() => runApp(MyApp());
 
-//自定义主键
-class Myapp extends StatelessWidget {
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Flutter Demo'),
-        ),
-        body: HomeContent(),
-      ),
-      theme: ThemeData(primarySwatch: Colors.yellow),
-    );
+        title: 'Flutter Demo',
+        theme: ThemeData(primarySwatch: Colors.yellow),
+        home: Scaffold(
+          appBar: AppBar(
+            title: Text('This is a App Bar!'),
+          ),
+          body: HomeContent(),
+        ));
   }
 }
 
+// ignore: camel_case_types
 class HomeContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
+        child: Container(
       child: Text(
-        'Hello Flutter',
-        textDirection: TextDirection.ltr,
+        'I am a text',
+        textAlign: TextAlign.center,
         style: TextStyle(
-          fontSize: 40.0,
-          color: Colors.yellow,
-        ),
+            fontSize: 16.0, color: Colors.white, fontWeight: FontWeight.w800),
+        textScaleFactor: 1.5,
       ),
-    );
+      height: 300.0,
+      width: 300.0,
+      decoration: BoxDecoration(
+          color: Colors.blue[200],
+          border: Border.all(color: Colors.blue, width: 2.0),
+          borderRadius: BorderRadius.all(
+            Radius.circular(150),
+          )),
+      padding: EdgeInsets.all(20),
+    ));
   }
 }
